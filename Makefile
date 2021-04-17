@@ -13,4 +13,7 @@ run:
 
 stop:
 	docker container kill vanilla-emacs
+
+emacs:
+	docker run -ti --rm --name vanilla-emacs maroxe/vanilla-emacs:1.0 emacs
 # end
