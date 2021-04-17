@@ -30,6 +30,17 @@
   (evil-collection-init))
 
 ;; Themes
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
+(global-display-line-numbers-mode 1)
+(global-visual-line-mode t)
+(use-package doom-modeline)
+(doom-modeline-mode 1)
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
 
 ;; Key bindings
 (use-package general
@@ -40,6 +51,7 @@
 (nvmap :states '(normal visual) :keymaps 'override :prefix "SPC"
   "SPC"   '(counsel-M-x :which-key "M-x")
   "."     '(find-file :which-key "Find file")
+  "f f"   '(find-file :which-key "Find file")
   "f r"   '(counsel-recentf :which-key "Recent files")
   "h r r" '((lambda () (interactive) (load-file "~/.emacs.d/init.el")) :which-key "Reload emacs config")
   "t t"   '(toggle-truncate-lines :which-key "Toggle truncate lines"))
