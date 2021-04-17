@@ -37,6 +37,7 @@
 (global-visual-line-mode t)
 (use-package doom-modeline)
 (doom-modeline-mode 1)
+(setq scroll-conservatively 101) ;; value greater than 100 gets rid of half page jumping
 (use-package dashboard
   :ensure t
   :config
@@ -135,3 +136,9 @@
          ("C-r" . swiper)))(use-package counsel
   :after ivy
   :config (counsel-mode))
+
+
+; Projectile
+(use-package projectile
+  :config
+  (projectile-global-mode 1))
