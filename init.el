@@ -53,10 +53,25 @@
   ":"   '(execute-extended-command :which-key "M-x")
   "."     '(find-file :which-key "Find file")
   "f f"   '(find-file :which-key "Find file")
+  "g g"   '(magit :which-key "Magit")
   "f r"   '(counsel-recentf :which-key "Recent files")
   "h r r" '((lambda () (interactive) (load-file "~/.emacs.d/init.el")) :which-key "Reload emacs config")
   "t t"   '(toggle-truncate-lines :which-key "Toggle truncate lines"))
 
+
+;; split windows and control
+(nvmap :prefix "SPC"
+       ;; Window splits
+       "w c"   '(evil-window-delete :which-key "Close window")
+       "w n"   '(evil-window-new :which-key "New window")
+       "w s"   '(evil-window-split :which-key "Horizontal split window")
+       "w v"   '(evil-window-vsplit :which-key "Vertical split window")
+       ;; Window motions
+       "w h"   '(evil-window-left :which-key "Window left")
+       "w j"   '(evil-window-down :which-key "Window down")
+       "w k"   '(evil-window-up :which-key "Window up")
+       "w l"   '(evil-window-right :which-key "Window right")
+       "w w"   '(evil-window-next :which-key "Goto next window"))
 
 
 (use-package which-key
@@ -87,3 +102,36 @@
 (use-package magit)
 (use-package magit-todos
   :config (magit-todos-mode))
+
+;; Ivy
+(use-package counsel
+  :after ivy
+  :config (counsel-mode))
+(use-package ivy
+  :defer 0.1
+  :diminish
+  :bind
+  (("C-c C-r" . ivy-resume)
+   ("C-x B" . ivy-switch-buffer-other-window))
+  :custom
+  (setq ivy-count-format "(%d/%d) ")
+  (setq ivy-use-virtual-buffers t)
+  (setq enable-recursive-minibuffers t)
+  :config
+  (ivy-mode))
+(use-package ivy-rich
+  :after ivy
+  :custom
+  (ivy-virtual-abbreviate 'full
+   ivy-rich-switch-buffer-align-virtual-buffer t
+   ivy-rich-path-style 'abbrev)
+  :config
+  (ivy-set-display-transformer 'ivy-switch-buffer
+                               'ivy-rich-switch-buffer-transformer)
+  (ivy-rich-mode 1)) ;; this gets us descriptions in M-x.
+(use-package swiper
+  :after ivy
+  :bind (("C-s" . swiper)
+         ("C-r" . swiper)))(use-package counsel
+  :after ivy
+  :config (counsel-mode))
