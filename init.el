@@ -50,6 +50,7 @@
 
 (nvmap :states '(normal visual) :keymaps 'override :prefix "SPC"
   "SPC"   '(counsel-M-x :which-key "M-x")
+  ":"   '(execute-extended-command :which-key "M-x")
   "."     '(find-file :which-key "Find file")
   "f f"   '(find-file :which-key "Find file")
   "f r"   '(counsel-recentf :which-key "Recent files")
