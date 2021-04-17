@@ -77,7 +77,13 @@
   (which-key-mode))
 
 
+;; Auto complete
 (use-package auto-complete
   :ensure t
   :config
   (ac-config-default))
+
+;; Magit
+(use-package magit)
+(use-package magit-todos
+  :config (magit-todos-mode))
