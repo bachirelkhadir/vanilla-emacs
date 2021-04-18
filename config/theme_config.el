@@ -37,3 +37,11 @@
 
 ;; Look and feel
 (defalias 'yes-or-no-p 'y-or-n-p)
+
+;; Highlight matching parens
+(use-package paren
+  :config
+  (set-face-attribute 'show-paren-match-expression nil :background "#000000")
+  (show-paren-mode 1))
+
+

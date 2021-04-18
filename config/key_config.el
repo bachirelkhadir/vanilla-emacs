@@ -1,4 +1,3 @@
-
 ;; Key bindings
 (use-package general
   :ensure t
@@ -15,8 +14,7 @@
   "h r r" '((lambda () (interactive) (load-file "~/.emacs.d/init.el")) :which-key "Reload emacs config")
   "h k" '(describe-key :which-key "Describe key")
   "h f" '(describe-function :which-key "Describe function")
-  "h v" '(describe-variable :which-key "Describe variable")
-  "t t"   '(toggle-truncate-lines :which-key "Toggle truncate lines"))
+  "h v" '(describe-variable :which-key "Describe variable"))
 
 
 ;; split windows and control
@@ -34,6 +32,13 @@
        "w w"   '(evil-window-next :which-key "Goto next window")
        ","   '(counsel-switch-buffer :which-key "Switch buffer"))
 
+
+;; UI toggle
+(nvmap :states '(normal visual) :keymaps 'override :prefix "SPC"
+  "t"  '(:ignore t :which-key "toggles")
+  "tw" 'whitespace-mode
+  "t t" '(counsel-load-theme :which-key "choose theme")
+  "t l"   '(toggle-truncate-lines :which-key "Toggle truncate lines"))
 
 (use-package which-key
   :ensure t
