@@ -23,10 +23,11 @@
   (setq evil-vsplit-window-right t)
   (setq evil-split-window-below t)
   (evil-mode))
+
 (use-package evil-collection
   :after evil
+  :ensure t
   :config
-  (setq evil-collection-mode-list '(dashboard dired ibuffer))
   (evil-collection-init))
 
 ;; Themes
@@ -57,6 +58,9 @@
   "g g"   '(magit :which-key "Magit")
   "f r"   '(counsel-recentf :which-key "Recent files")
   "h r r" '((lambda () (interactive) (load-file "~/.emacs.d/init.el")) :which-key "Reload emacs config")
+  "h k" '(describe-key :which-key "Describe key")
+  "h f" '(describe-function :which-key "Describe function")
+  "h v" '(describe-variable :which-key "Describe variable")
   "t t"   '(toggle-truncate-lines :which-key "Toggle truncate lines"))
 
 
@@ -103,6 +107,7 @@
 (use-package magit)
 (use-package magit-todos
   :config (magit-todos-mode))
+
 
 ;; Ivy
 (use-package counsel
