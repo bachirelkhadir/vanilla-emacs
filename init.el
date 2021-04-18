@@ -16,8 +16,8 @@
     (message "Loaded config file:%s" file)
     ))
 
-(bac:load-config-file '("evil_config"
-			"package_config"
+(bac:load-config-file '("package_config"
+			"evil_config"
 			"theme_config"
 			"key_config"
 			"ivy_config"
