@@ -25,6 +25,7 @@
   :bind (("C-s" . swiper)
          ("C-r" . swiper)))
 
+(setq ivy-initial-inputs-alist nil) ;; Remove the ^ at the begining of prompts
 ; Helpful
 (use-package helpful
   :custom
