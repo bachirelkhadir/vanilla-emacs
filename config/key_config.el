@@ -4,7 +4,7 @@
   :config
   (general-evil-setup t))
 
-(nvmap :states '(normal visual) :keymaps 'override :prefix "SPC"
+(nvmap  :prefix "SPC"
   "SPC"   '(counsel-M-x :which-key "M-x")
   ":"   '(execute-extended-command :which-key "M-x")
   "."     '(find-file :which-key "Find file")
@@ -34,7 +34,7 @@
 
 
 ;; UI toggle
-(nvmap :states '(normal visual) :keymaps 'override :prefix "SPC"
+(nvmap  :prefix "SPC"
   "t"  '(:ignore t :which-key "toggles")
   "tw" 'whitespace-mode
   "t t" '(counsel-load-theme :which-key "choose theme")
