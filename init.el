@@ -33,9 +33,13 @@
   (ac-config-default))
 
 ;; Magit
-(use-package magit)
+(use-package magit
+  :config
+  (general-override-mode)) ; respect general "override" keymap
+
 (use-package magit-todos
-  :config (magit-todos-mode))
+  :config
+  (magit-todos-mode))
 
 
 

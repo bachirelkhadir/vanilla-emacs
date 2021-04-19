@@ -18,7 +18,8 @@
 
 
 ;; split windows and control
-(nvmap :prefix "SPC"
+;; The :keymaps override is meant to prevent other modes from overriding it.
+(nvmap :prefix "SPC" :keymaps 'override
        ;; Window splits
        "w c"   '(evil-window-delete :which-key "Close window")
        "w n"   '(evil-window-new :which-key "New window")
