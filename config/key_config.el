@@ -14,7 +14,10 @@
   "h r r" '((lambda () (interactive) (load-file "~/.emacs.d/init.el")) :which-key "Reload emacs config")
   "h k" '(describe-key :which-key "Describe key")
   "h f" '(describe-function :which-key "Describe function")
-  "h v" '(describe-variable :which-key "Describe variable"))
+  "h v" '(describe-variable :which-key "Describe variable")
+  "c c" '(compile :which-key "Compile")
+  "c C" '(recompile :which-key "Recompile")
+  )
 
 
 ;; split windows and control
