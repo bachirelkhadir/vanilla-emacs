@@ -3,6 +3,8 @@
 (load custom-file)
 (global-set-key (kbd "C-c C-c") 'eval-region)
 
+;; set emacs home to a different folder
+;; this avoids clutter in .emacs.d, which is usually tracked on git.
 (setq user-emacs-directory "~/.emacs.user.d/")
 
 ;; Modular emacs config
@@ -41,7 +43,6 @@
 (use-package magit-todos
   :config
   (magit-todos-mode))
-
 
 
 ; Projectile

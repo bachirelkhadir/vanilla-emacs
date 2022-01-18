@@ -20,7 +20,7 @@
   )
 
 
-;; split windows and control
+;; Split windows and control
 ;; The :keymaps override is meant to prevent other modes from overriding it.
 (nvmap :prefix "SPC" :keymaps 'override
        ;; Window splits
@@ -36,6 +36,10 @@
        "w w"   '(evil-window-next :which-key "Goto next window")
        ","   '(counsel-switch-buffer :which-key "Switch buffer"))
 
+;; buffer management
+
+(nvmap
+  "zx" '(kill-current-buffer :which-key "Kill current buffer"))
 
 ;; UI toggle
 (nvmap  :prefix "SPC"
