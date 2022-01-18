@@ -1,15 +1,20 @@
 # Vanilla-emacs
 
-Run emacs
+clone this repo
 
-```
-docker run -it --rm silex/emacs
-```
-
-Connect to a bash
-```
-docker exec -it elegant_wu bash
+``` sh
+git@github.com:bachirelkhadir/vanilla-emacs.git
 ```
 
-and clone the current repo in .emacs.d
 
+build it
+
+``` sh
+make build
+```
+
+run emacs (and bound local "emacs.d" to "/root/.emacs.d") to be able to modify config file from inside and outside docker.
+
+``` sh
+emacs-with-local-config
+```
