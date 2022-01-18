@@ -6,7 +6,7 @@
  '(ansi-color-names-vector
    ["#242424" "#e5786d" "#95e454" "#cae682" "#8ac6f2" "#333366" "#ccaa8f" "#f6f3e8"])
  '(package-selected-packages
-   '(helpful evil-magit projectile ivy-rich counsel magit-todos magit dashboard doom-modeline auto-complete which-key general evil-collection evil use-package))
+   '(ivy rainbow-delimiters helpful evil-magit projectile ivy-rich counsel magit-todos magit dashboard doom-modeline auto-complete which-key general evil-collection evil use-package))
  '(visible-bell t))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

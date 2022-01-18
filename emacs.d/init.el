@@ -3,6 +3,7 @@
 (load custom-file)
 (global-set-key (kbd "C-c C-c") 'eval-region)
 
+(setq user-emacs-directory "~/.emacs.user.d/")
 
 ;; Modular emacs config
 (defconst bac:emacs-config-dir "~/.emacs.d/config/"
